@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catholic Congress – Helping Hands</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf5;
+      color: #333;
+      font-size: 16px;
+    }
+
+    header {
+      background-color: #427d9d;
+      color: #fff;
+      padding: 15px 10px;
+      text-align: center;
+      font-size: 1.3em;
+      position: relative;
+    }
+
+    .home-button {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background-color: #f08080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.9em;
+      cursor: pointer;
+      z-index: 99;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .box {
+      background-color: #f0f8ff;
+      border: 2px solid #c8d8e4;
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      min-width: 150px;
+      box-sizing: border-box;
+    }
+
+    .box:hover {
+      background-color: #e6f7ff;
+      transform: scale(1.02);
+    }
+
+    #helpdesk-submenu {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.1em;
+      }
+
+      .box {
+        font-size: 0.95em;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    Catholic Congress – Helping Hands for All Catholics
+    <button class="home-button" onclick="goHome()" id="homeBtn" style="display:none;">Home</button>
+  </header>
+
+  <!-- Main Menu -->
+  <div class="container" id="main-menu">
+    <div class="box" onclick="openHelpdesk()">Helpdesk - Job Search, House Rentals, Used Items</div>
+    <div class="box">Social Response and Media</div>
+    <div class="box">Inter Organizational Relationship</div>
+    <div class="box">Syro Malabar Cultural Projects</div>
+    <div class="box">Event Management</div>
+    <div class="box">Charity and Outreach</div>
+    <div class="box">Finance</div>
+  </div>
+
+  <!-- Helpdesk Submenu -->
+  <div id="helpdesk-submenu">
+    <div class="container">
+      <div class="box">Accounting Jobs</div>
+      <div class="box">Administration Jobs</div>
+      <div class="box">Apprenticeship and Traineeship</div>
+      <div class="box">Civil Engineering</div>
+      <div class="box">Customer Service</div>
+      <div class="box">HealthCare</div>
+      <div class="box">Information Technology</div>
+      <div class="box">Nursing</div>
+      <div class="box">Prisons</div>
+      <div class="box">Procurement</div>
+      <div class="box">Teaching</div>
+      <div class="box">Warehousing</div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function openHelpdesk() {
+      document.getElementById("main-menu").style.display = "none";
+      document.getElementById("helpdesk-submenu").style.display = "block";
+      document.getElementById("homeBtn").style.display = "inline-block";
+    }
+
+    function goHome() {
+      document.getElementById("helpdesk-submenu").style.display = "none";
+      document.getElementById("main-menu").style.display = "grid";
+      document.getElementById("homeBtn").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
